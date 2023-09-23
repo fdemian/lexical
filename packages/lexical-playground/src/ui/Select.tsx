@@ -20,7 +20,7 @@ export default function Select({
   label,
   className,
   ...other
-}: SelectProps): JSX.Element {
+}: SelectProps): React.ReactElement {
   return (
     <div className="Input__wrapper">
       <label style={{marginTop: '-1em'}} className="Input__label">

@@ -58,7 +58,7 @@ describe('LexicalHistory tests', () => {
   // Shared instance across tests
   let editor: LexicalEditor;
 
-  function Test(): JSX.Element {
+  function Test(): React.ReactElement {
     function TestPlugin() {
       // Plugin used just to get our hands on the Editor object
       [editor] = useLexicalComposerContext();

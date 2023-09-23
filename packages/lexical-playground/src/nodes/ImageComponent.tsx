@@ -88,7 +88,7 @@ function LazyImage({
   maxWidth: number;
   src: string;
   width: 'inherit' | number;
-}): JSX.Element {
+}): React.ReactElement {
   useSuspenseImage(src);
   return (
     <img
@@ -128,7 +128,7 @@ export default function ImageComponent({
   src: string;
   width: 'inherit' | number;
   captionsEnabled: boolean;
-}): JSX.Element {
+}): React.ReactElement {
   const imageRef = useRef<null | HTMLImageElement>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [isSelected, setSelected, clearSelection] =

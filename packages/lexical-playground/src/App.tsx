@@ -112,7 +112,7 @@ function prepopulatedRichText() {
   }
 }
 
-function App(): JSX.Element {
+function App(): React.ReactElement {
   const {
     settings: {isCollab, emptyEditor, measureTypingPerf},
   } = useSettings();
@@ -157,7 +157,7 @@ function App(): JSX.Element {
   );
 }
 
-export default function PlaygroundApp(): JSX.Element {
+export default function PlaygroundApp(): React.ReactElement {
   return (
     <SettingsContext>
       <App />

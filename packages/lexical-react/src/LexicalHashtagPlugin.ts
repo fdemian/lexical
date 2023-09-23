@@ -12,6 +12,7 @@ import {$createHashtagNode, HashtagNode} from '@lexical/hashtag';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {useLexicalTextEntity} from '@lexical/react/useLexicalTextEntity';
 import {useCallback, useEffect} from 'react';
+import * as React from 'react';
 
 function getHashtagRegexStringChars(): Readonly<{
   alpha: string;
@@ -248,7 +249,7 @@ function getHashtagRegexString(): string {
 
 const REGEX = new RegExp(getHashtagRegexString(), 'i');
 
-export function HashtagPlugin(): JSX.Element | null {
+export function HashtagPlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {

@@ -46,7 +46,7 @@ export function ContentEditable({
   tabIndex,
   'data-testid': testid,
   ...rest
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   const [editor] = useLexicalComposerContext();
   const [isEditable, setEditable] = useState(false);
 

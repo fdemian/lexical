@@ -38,7 +38,7 @@ export type SerializedStickyNode = Spread<
   SerializedLexicalNode
 >;
 
-export class StickyNode extends DecoratorNode<JSX.Element> {
+export class StickyNode extends DecoratorNode<React.ReactElement> {
   __x: number;
   __y: number;
   __color: StickyNoteColor;
@@ -119,7 +119,7 @@ export class StickyNode extends DecoratorNode<JSX.Element> {
     writable.__color = writable.__color === 'pink' ? 'yellow' : 'pink';
   }
 
-  decorate(editor: LexicalEditor, config: EditorConfig): JSX.Element {
+  decorate(editor: LexicalEditor, config: EditorConfig): React.ReactElement {
     return createPortal(
       <Suspense fallback={null}>
         <StickyComponent

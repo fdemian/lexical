@@ -45,7 +45,7 @@ With access to the Editor, your plugin can extend Lexical via [Commands](https:/
 ```jsx
 export const INSERT_TWEET_COMMAND: LexicalCommand<string> = createCommand();
 
-export default function TwitterPlugin(): JSX.Element | null {
+export default function TwitterPlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {

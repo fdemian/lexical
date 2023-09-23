@@ -353,7 +353,7 @@ export function $createTestExcludeFromCopyElementNode(): TestExcludeFromCopyElem
 
 export type SerializedTestDecoratorNode = SerializedLexicalNode;
 
-export class TestDecoratorNode extends DecoratorNode<JSX.Element> {
+export class TestDecoratorNode extends DecoratorNode<React.ReactElement> {
   static getType(): string {
     return 'test_decorator';
   }
@@ -409,7 +409,7 @@ export class TestDecoratorNode extends DecoratorNode<JSX.Element> {
   }
 }
 
-function Decorator({text}): JSX.Element {
+function Decorator({text}): React.ReactElement {
   return <span>{text}</span>;
 }
 

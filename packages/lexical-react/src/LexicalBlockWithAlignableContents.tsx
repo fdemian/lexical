@@ -45,7 +45,7 @@ export function BlockWithAlignableContents({
   format,
   nodeKey,
   className,
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   const [editor] = useLexicalComposerContext();
 
   const [isSelected, setSelected, clearSelection] =

@@ -15,6 +15,7 @@ import type {
 } from 'lexical';
 
 import {DecoratorNode} from 'lexical';
+import * as React from 'react';
 
 export type SerializedDecoratorBlockNode = Spread<
   {
@@ -23,7 +24,7 @@ export type SerializedDecoratorBlockNode = Spread<
   SerializedLexicalNode
 >;
 
-export class DecoratorBlockNode extends DecoratorNode<JSX.Element> {
+export class DecoratorBlockNode extends DecoratorNode<React.ReactElement> {
   __format: ElementFormatType;
 
   constructor(format?: ElementFormatType, key?: NodeKey) {

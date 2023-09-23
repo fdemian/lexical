@@ -39,7 +39,7 @@ export function InsertEquationDialog({
 }: {
   activeEditor: LexicalEditor;
   onClose: () => void;
-}): JSX.Element {
+}): React.ReactElement {
   const onEquationConfirm = useCallback(
     (equation: string, inline: boolean) => {
       activeEditor.dispatchCommand(INSERT_EQUATION_COMMAND, {equation, inline});
@@ -51,7 +51,7 @@ export function InsertEquationDialog({
   return <KatexEquationAlterer onConfirm={onEquationConfirm} />;
 }
 
-export default function EquationsPlugin(): JSX.Element | null {
+export default function EquationsPlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {

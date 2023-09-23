@@ -14,7 +14,7 @@ import {createPortal, flushSync} from 'react-dom';
 import useLayoutEffect from 'shared/useLayoutEffect';
 
 type ErrorBoundaryProps = {
-  children: JSX.Element;
+  children: React.ReactElement;
   onError: (error: Error) => void;
 };
 
@@ -25,18 +25,20 @@ export type ErrorBoundaryType =
 export function useDecorators(
   editor: LexicalEditor,
   ErrorBoundary: ErrorBoundaryType,
-): Array<JSX.Element> {
-  const [decorators, setDecorators] = useState<Record<string, JSX.Element>>(
-    () => editor.getDecorators<JSX.Element>(),
-  );
+): Array<React.ReactElement> {
+  const [decorators, setDecorators] = useState<
+    Record<string, React.ReactElement>
+  >(() => editor.getDecorators<React.ReactElement>());
 
   // Subscribe to changes
   useLayoutEffect(() => {
-    return editor.registerDecoratorListener<JSX.Element>((nextDecorators) => {
-      flushSync(() => {
-        setDecorators(nextDecorators);
-      });
-    });
+    return editor.registerDecoratorListener<React.ReactElement>(
+      (nextDecorators) => {
+        flushSync(() => {
+          setDecorators(nextDecorators);
+        });
+      },
+    );
   }, [editor]);
 
   useEffect(() => {

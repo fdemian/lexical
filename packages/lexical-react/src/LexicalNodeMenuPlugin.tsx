@@ -46,7 +46,7 @@ export function LexicalNodeMenuPlugin<TOption extends MenuOption>({
   onSelectOption,
   menuRenderFn,
   anchorClassName,
-}: NodeMenuPluginProps<TOption>): JSX.Element | null {
+}: NodeMenuPluginProps<TOption>): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
   const [resolution, setResolution] = useState<MenuResolution | null>(null);
   const anchorElementRef = useMenuAnchorRef(

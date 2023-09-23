@@ -49,7 +49,7 @@ class ComponentPickerOption extends MenuOption {
   // What shows up in the editor
   title: string;
   // Icon for display
-  icon?: JSX.Element;
+  icon?: React.ReactElement;
   // For extra searching.
   keywords: Array<string>;
   // TBD
@@ -60,7 +60,7 @@ class ComponentPickerOption extends MenuOption {
   constructor(
     title: string,
     options: {
-      icon?: JSX.Element;
+      icon?: React.ReactElement;
       keywords?: Array<string>;
       keyboardShortcut?: string;
       onSelect: (queryString: string) => void;
@@ -109,7 +109,7 @@ function ComponentPickerMenuItem({
   );
 }
 
-export default function ComponentPickerMenuPlugin(): JSX.Element {
+export default function ComponentPickerMenuPlugin(): React.ReactElement {
   const [editor] = useLexicalComposerContext();
   const [modal, showModal] = useModal();
   const [queryString, setQueryString] = useState<string | null>(null);

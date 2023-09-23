@@ -48,7 +48,7 @@ function convertExcalidrawElement(
   return null;
 }
 
-export class ExcalidrawNode extends DecoratorNode<JSX.Element> {
+export class ExcalidrawNode extends DecoratorNode<React.ReactElement> {
   __data: string;
 
   static getType(): string {
@@ -123,7 +123,7 @@ export class ExcalidrawNode extends DecoratorNode<JSX.Element> {
     self.__data = data;
   }
 
-  decorate(editor: LexicalEditor, config: EditorConfig): JSX.Element {
+  decorate(editor: LexicalEditor, config: EditorConfig): React.ReactElement {
     return (
       <Suspense fallback={null}>
         <ExcalidrawComponent nodeKey={this.getKey()} data={this.__data} />

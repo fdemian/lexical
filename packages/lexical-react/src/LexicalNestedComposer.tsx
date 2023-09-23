@@ -36,7 +36,7 @@ export function LexicalNestedComposer({
   initialTheme?: EditorThemeClasses;
   initialNodes?: ReadonlyArray<Klass<LexicalNode> | LexicalNodeReplacement>;
   skipCollabChecks?: true;
-}): JSX.Element {
+}): React.ReactElement {
   const wasCollabPreviouslyReadyRef = useRef(false);
   const parentContext = useContext(LexicalComposerContext);
 

@@ -7,6 +7,7 @@
  */
 
 import {useEffect} from 'react';
+import * as React from 'react';
 
 import useReport from '../../hooks/useReport';
 
@@ -29,7 +30,7 @@ const validInputTypes = new Set([
   'deleteSoftLineForward',
 ]);
 
-export default function TypingPerfPlugin(): JSX.Element | null {
+export default function TypingPerfPlugin(): React.ReactElement | null {
   const report = useReport();
   useEffect(() => {
     let start = 0;

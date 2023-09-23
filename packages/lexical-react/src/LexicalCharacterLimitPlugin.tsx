@@ -45,7 +45,7 @@ export function CharacterLimitPlugin({
 }: {
   charset: 'UTF-8' | 'UTF-16';
   maxLength: number;
-}): JSX.Element {
+}): React.ReactElement {
   const [editor] = useLexicalComposerContext();
 
   const [remainingCharacters, setRemainingCharacters] = useState(maxLength);

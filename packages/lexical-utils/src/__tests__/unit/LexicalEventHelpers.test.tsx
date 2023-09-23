@@ -90,7 +90,7 @@ describe('LexicalEventHelpers', () => {
 
   async function init() {
     function TestBase() {
-      function TestPlugin(): JSX.Element {
+      function TestPlugin(): React.ReactElement {
         [editor] = useLexicalComposerContext();
 
         return null;

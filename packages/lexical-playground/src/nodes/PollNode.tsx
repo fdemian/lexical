@@ -77,7 +77,7 @@ function convertPollElement(domNode: HTMLElement): DOMConversionOutput | null {
   return null;
 }
 
-export class PollNode extends DecoratorNode<JSX.Element> {
+export class PollNode extends DecoratorNode<React.ReactElement> {
   __question: string;
   __options: Options;
 
@@ -188,7 +188,7 @@ export class PollNode extends DecoratorNode<JSX.Element> {
     return false;
   }
 
-  decorate(): JSX.Element {
+  decorate(): React.ReactElement {
     return (
       <Suspense fallback={null}>
         <PollComponent

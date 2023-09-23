@@ -955,7 +955,7 @@ describe('LexicalEditor tests', () => {
     it('Should correctly render React component into Lexical node #2', async () => {
       const listener = jest.fn();
 
-      function Test({divKey}): JSX.Element {
+      function Test({divKey}): React.ReactElement {
         function TestPlugin() {
           [editor] = useLexicalComposerContext();
 

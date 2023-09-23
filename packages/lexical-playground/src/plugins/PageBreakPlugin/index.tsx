@@ -15,12 +15,13 @@ import {
   LexicalCommand,
 } from 'lexical';
 import {useEffect} from 'react';
+import * as React from 'react';
 
 import {$createPageBreakNode, PageBreakNode} from '../../nodes/PageBreakNode';
 
 export const INSERT_PAGE_BREAK: LexicalCommand<undefined> = createCommand();
 
-export default function PageBreakPlugin(): JSX.Element | null {
+export default function PageBreakPlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {

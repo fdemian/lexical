@@ -12,6 +12,7 @@ import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {$isHeadingNode, HeadingNode, HeadingTagType} from '@lexical/rich-text';
 import {$getNodeByKey, $getRoot, TextNode} from 'lexical';
 import {useEffect, useState} from 'react';
+import * as React from 'react';
 
 export type TableOfContentsEntry = [
   key: NodeKey,
@@ -107,12 +108,12 @@ type Props = {
   children: (
     values: Array<TableOfContentsEntry>,
     editor: LexicalEditor,
-  ) => JSX.Element;
+  ) => React.ReactElement;
 };
 
 export default function LexicalTableOfContentsPlugin({
   children,
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   const [tableOfContents, setTableOfContents] = useState<
     Array<TableOfContentsEntry>
   >([]);

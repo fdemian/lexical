@@ -171,7 +171,7 @@ export default function ExcalidrawModal({
     }
   };
 
-  function ShowDiscardDialog(): JSX.Element {
+  function ShowDiscardDialog(): React.ReactElement {
     return (
       <Modal
         title="Discard"

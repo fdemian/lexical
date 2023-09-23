@@ -13,7 +13,7 @@ import {isDevPlayground} from './appSettings';
 import {useSettings} from './context/SettingsContext';
 import Switch from './ui/Switch';
 
-export default function Settings(): JSX.Element {
+export default function Settings(): React.ReactElement {
   const windowLocation = window.location;
   const {
     setOption,

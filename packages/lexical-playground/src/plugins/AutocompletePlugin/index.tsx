@@ -28,6 +28,7 @@ import {
   KEY_TAB_COMMAND,
 } from 'lexical';
 import {useCallback, useEffect} from 'react';
+import * as React from 'react';
 
 import {useSharedAutocompleteContext} from '../../context/SharedAutocompleteContext';
 import {
@@ -83,7 +84,7 @@ function useQuery(): (searchText: string) => SearchPromise {
   }, []);
 }
 
-export default function AutocompletePlugin(): JSX.Element | null {
+export default function AutocompletePlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
   const [, setSuggestion] = useSharedAutocompleteContext();
   const query = useQuery();

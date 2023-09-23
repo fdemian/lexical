@@ -8,10 +8,11 @@
 
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {useEffect} from 'react';
+import * as React from 'react';
 
 import {StickyNode} from '../../nodes/StickyNode';
 
-export default function StickyPlugin(): JSX.Element | null {
+export default function StickyPlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
   useEffect(() => {
     if (!editor.hasNodes([StickyNode])) {

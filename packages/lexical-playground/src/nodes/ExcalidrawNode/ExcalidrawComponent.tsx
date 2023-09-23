@@ -36,7 +36,7 @@ export default function ExcalidrawComponent({
 }: {
   data: string;
   nodeKey: NodeKey;
-}): JSX.Element {
+}): React.ReactElement {
   const [editor] = useLexicalComposerContext();
   const [isModalOpen, setModalOpen] = useState<boolean>(
     data === '[]' && editor.isEditable(),

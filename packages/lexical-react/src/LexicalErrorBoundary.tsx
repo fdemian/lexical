@@ -10,14 +10,14 @@ import * as React from 'react';
 import {ErrorBoundary as ReactErrorBoundary} from 'react-error-boundary';
 
 export type LexicalErrorBoundaryProps = {
-  children: JSX.Element;
+  children: React.ReactElement;
   onError: (error: Error) => void;
 };
 
 export default function LexicalErrorBoundary({
   children,
   onError,
-}: LexicalErrorBoundaryProps): JSX.Element {
+}: LexicalErrorBoundaryProps): React.ReactElement {
   return (
     <ReactErrorBoundary
       fallback={

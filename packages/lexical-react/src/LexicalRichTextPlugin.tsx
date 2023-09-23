@@ -19,13 +19,13 @@ export function RichTextPlugin({
   placeholder,
   ErrorBoundary,
 }: {
-  contentEditable: JSX.Element;
+  contentEditable: React.ReactElement;
   placeholder:
-    | ((isEditable: boolean) => null | JSX.Element)
+    | ((isEditable: boolean) => null | React.ReactElement)
     | null
-    | JSX.Element;
+    | React.ReactElement;
   ErrorBoundary: ErrorBoundaryType;
-}): JSX.Element {
+}): React.ReactElement {
   const [editor] = useLexicalComposerContext();
   const decorators = useDecorators(editor, ErrorBoundary);
   useRichTextSetup(editor);
@@ -42,8 +42,11 @@ export function RichTextPlugin({
 function Placeholder({
   content,
 }: {
-  content: ((isEditable: boolean) => null | JSX.Element) | null | JSX.Element;
-}): null | JSX.Element {
+  content:
+    | ((isEditable: boolean) => null | React.ReactElement)
+    | null
+    | React.ReactElement;
+}): null | React.ReactElement {
   const [editor] = useLexicalComposerContext();
   const showPlaceholder = useCanShowPlaceholder(editor);
   const editable = useLexicalEditable();

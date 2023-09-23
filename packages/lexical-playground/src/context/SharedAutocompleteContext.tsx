@@ -36,7 +36,7 @@ export const SharedAutocompleteContext = ({
   children,
 }: {
   children: ReactNode;
-}): JSX.Element => {
+}): React.ReactElement => {
   const context: ContextShape = useMemo(() => {
     let suggestion: Suggestion | null = null;
     const listeners: Set<CallbackFn> = new Set();

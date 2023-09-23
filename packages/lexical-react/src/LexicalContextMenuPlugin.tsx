@@ -31,7 +31,7 @@ export type ContextMenuRenderFn<TOption extends MenuOption> = (
   menuProps: {
     setMenuRef: (element: HTMLElement | null) => void;
   },
-) => ReactPortal | JSX.Element | null;
+) => ReactPortal | React.ReactElement | null;
 
 export type LexicalContextMenuPluginProps<TOption extends MenuOption> = {
   onSelectOption: (
@@ -56,7 +56,7 @@ export function LexicalContextMenuPlugin<TOption extends MenuOption>({
   onSelectOption,
   menuRenderFn: contextMenuRenderFn,
   anchorClassName,
-}: LexicalContextMenuPluginProps<TOption>): JSX.Element | null {
+}: LexicalContextMenuPluginProps<TOption>): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
   const [resolution, setResolution] = useState<MenuResolution | null>(null);
   const menuRef = React.useRef<HTMLElement | null>(null);

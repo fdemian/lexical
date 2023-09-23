@@ -100,7 +100,7 @@ function HorizontalRuleComponent({nodeKey}: {nodeKey: NodeKey}) {
   return null;
 }
 
-export class HorizontalRuleNode extends DecoratorNode<JSX.Element> {
+export class HorizontalRuleNode extends DecoratorNode<React.ReactElement> {
   static getType(): string {
     return 'horizontalrule';
   }
@@ -151,7 +151,7 @@ export class HorizontalRuleNode extends DecoratorNode<JSX.Element> {
     return false;
   }
 
-  decorate(): JSX.Element {
+  decorate(): React.ReactElement {
     return <HorizontalRuleComponent nodeKey={this.__key} />;
   }
 }

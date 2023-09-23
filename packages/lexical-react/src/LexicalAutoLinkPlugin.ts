@@ -25,6 +25,7 @@ import {
   TextNode,
 } from 'lexical';
 import {useEffect} from 'react';
+import * as React from 'react';
 import invariant from 'shared/invariant';
 
 type ChangeHandler = (url: string | null, prevUrl: string | null) => void;
@@ -317,7 +318,7 @@ export function AutoLinkPlugin({
 }: {
   matchers: Array<LinkMatcher>;
   onChange?: ChangeHandler;
-}): JSX.Element | null {
+}): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useAutoLink(editor, matchers, onChange);

@@ -67,7 +67,7 @@ export function TreeView({
   timeTravelPanelClassName: string;
   timeTravelPanelSliderClassName: string;
   viewClassName: string;
-}): JSX.Element {
+}): React.ReactElement {
   const [timeStampedEditorStates, setTimeStampedEditorStates] = useState<
     Array<[number, EditorState]>
   >([]);

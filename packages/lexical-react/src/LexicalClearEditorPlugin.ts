@@ -14,13 +14,14 @@ import {
   CLEAR_EDITOR_COMMAND,
   COMMAND_PRIORITY_EDITOR,
 } from 'lexical';
+import * as React from 'react';
 import useLayoutEffect from 'shared/useLayoutEffect';
 
 type Props = Readonly<{
   onClear?: () => void;
 }>;
 
-export function ClearEditorPlugin({onClear}: Props): JSX.Element | null {
+export function ClearEditorPlugin({onClear}: Props): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useLayoutEffect(() => {

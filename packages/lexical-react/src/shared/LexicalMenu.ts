@@ -31,6 +31,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import * as React from 'react';
 import useLayoutEffect from 'shared/useLayoutEffect';
 
 export type MenuTextMatch = {
@@ -71,7 +72,7 @@ export type MenuRenderFn<TOption extends MenuOption> = (
     options: Array<TOption>;
   },
   matchingString: string | null,
-) => ReactPortal | JSX.Element | null;
+) => ReactPortal | React.ReactElement | null;
 
 const scrollIntoViewIfNeeded = (target: HTMLElement) => {
   const typeaheadContainerNode = document.getElementById('typeahead-menu');
@@ -274,7 +275,7 @@ export function LexicalMenu<TOption extends MenuOption>({
     closeMenu: () => void,
     matchingString: string,
   ) => void;
-}): JSX.Element | null {
+}): React.ReactElement | null {
   const [selectedIndex, setHighlightedIndex] = useState<null | number>(null);
 
   const matchingString = resolution.match && resolution.match.matchingString;

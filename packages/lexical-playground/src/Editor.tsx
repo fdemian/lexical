@@ -78,7 +78,7 @@ const skipCollaborationInit =
   // @ts-ignore
   window.parent != null && window.parent.frames.right === window;
 
-export default function Editor(): JSX.Element {
+export default function Editor(): React.ReactElement {
   const {historyState} = useSharedHistoryContext();
   const {
     settings: {

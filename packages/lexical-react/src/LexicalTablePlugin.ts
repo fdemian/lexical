@@ -35,6 +35,7 @@ import {
   DEPRECATED_$isGridRowNode,
 } from 'lexical';
 import {useEffect} from 'react';
+import * as React from 'react';
 import invariant from 'shared/invariant';
 
 export function TablePlugin({
@@ -45,7 +46,7 @@ export function TablePlugin({
   hasCellMerge?: boolean;
   hasCellBackgroundColor?: boolean;
   hasTabHandler?: boolean;
-}): JSX.Element | null {
+}): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
 
   useEffect(() => {

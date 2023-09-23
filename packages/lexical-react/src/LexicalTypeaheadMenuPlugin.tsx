@@ -207,7 +207,7 @@ export function LexicalTypeaheadMenuPlugin<TOption extends MenuOption>({
   menuRenderFn,
   triggerFn,
   anchorClassName,
-}: TypeaheadMenuPluginProps<TOption>): JSX.Element | null {
+}: TypeaheadMenuPluginProps<TOption>): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
   const [resolution, setResolution] = useState<MenuResolution | null>(null);
   const anchorElementRef = useMenuAnchorRef(

@@ -49,7 +49,7 @@ function convertEquationElement(
   return null;
 }
 
-export class EquationNode extends DecoratorNode<JSX.Element> {
+export class EquationNode extends DecoratorNode<React.ReactElement> {
   __equation: string;
   __inline: boolean;
 
@@ -149,7 +149,7 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
     writable.__equation = equation;
   }
 
-  decorate(): JSX.Element {
+  decorate(): React.ReactElement {
     return (
       <Suspense fallback={null}>
         <EquationComponent

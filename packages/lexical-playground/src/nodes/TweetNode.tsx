@@ -34,7 +34,7 @@ type TweetComponentProps = Readonly<{
     focus: string;
   }>;
   format: ElementFormatType | null;
-  loadingComponent?: JSX.Element | string;
+  loadingComponent?: React.ReactElement | string;
   nodeKey: NodeKey;
   onError?: (error: string) => void;
   onLoad?: () => void;
@@ -194,7 +194,7 @@ export class TweetNode extends DecoratorBlockNode {
     return `https://twitter.com/i/web/status/${this.__id}`;
   }
 
-  decorate(editor: LexicalEditor, config: EditorConfig): JSX.Element {
+  decorate(editor: LexicalEditor, config: EditorConfig): React.ReactElement {
     const embedBlockTheme = config.theme.embedBlock || {};
     const className = {
       base: embedBlockTheme.base || '',

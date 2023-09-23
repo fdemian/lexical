@@ -12,6 +12,7 @@ import {useCollaborationContext} from '@lexical/react/LexicalCollaborationContex
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {ExcludedProperties, Provider} from '@lexical/yjs';
 import {useEffect, useMemo} from 'react';
+import * as React from 'react';
 
 import {InitialEditorStateType} from './LexicalComposer';
 import {
@@ -48,7 +49,7 @@ export function CollaborationPlugin({
   initialEditorState,
   excludedProperties,
   awarenessData,
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   const collabContext = useCollaborationContext(username, cursorColor);
 
   const {yjsDocMap, name, color} = collabContext;

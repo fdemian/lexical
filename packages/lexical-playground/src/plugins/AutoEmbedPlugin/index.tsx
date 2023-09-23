@@ -32,7 +32,7 @@ interface PlaygroundEmbedConfig extends EmbedConfig {
   contentName: string;
 
   // Icon for display.
-  icon?: JSX.Element;
+  icon?: React.ReactElement;
 
   // An example of a matching url https://twitter.com/jack/status/20
   exampleUrl: string;
@@ -230,7 +230,7 @@ export function AutoEmbedDialog({
 }: {
   embedConfig: PlaygroundEmbedConfig;
   onClose: () => void;
-}): JSX.Element {
+}): React.ReactElement {
   const [text, setText] = useState('');
   const [editor] = useLexicalComposerContext();
   const [embedResult, setEmbedResult] = useState<EmbedMatchResult | null>(null);
@@ -287,7 +287,7 @@ export function AutoEmbedDialog({
   );
 }
 
-export default function AutoEmbedPlugin(): JSX.Element {
+export default function AutoEmbedPlugin(): React.ReactElement {
   const [modal, showModal] = useModal();
 
   const openEmbedModal = (embedConfig: PlaygroundEmbedConfig) => {

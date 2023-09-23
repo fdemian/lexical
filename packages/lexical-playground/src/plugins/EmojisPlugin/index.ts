@@ -11,6 +11,7 @@ import type {LexicalEditor} from 'lexical';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {TextNode} from 'lexical';
 import {useEffect} from 'react';
+import * as React from 'react';
 
 import {$createEmojiNode, EmojiNode} from '../../nodes/EmojiNode';
 
@@ -72,7 +73,7 @@ function useEmojis(editor: LexicalEditor): void {
   }, [editor]);
 }
 
-export default function EmojisPlugin(): JSX.Element | null {
+export default function EmojisPlugin(): React.ReactElement | null {
   const [editor] = useLexicalComposerContext();
   useEmojis(editor);
   return null;

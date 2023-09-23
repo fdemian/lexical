@@ -81,7 +81,7 @@ function AddCommentBox({
   anchorKey: NodeKey;
   editor: LexicalEditor;
   onAddComment: () => void;
-}): JSX.Element {
+}): React.ReactElement {
   const boxRef = useRef<HTMLDivElement>(null);
 
   const updatePosition = useCallback(() => {
@@ -428,7 +428,7 @@ function ShowDeleteCommentOrThreadDialog({
   ) => void;
   onClose: () => void;
   thread?: Thread;
-}): JSX.Element {
+}): React.ReactElement {
   return (
     <>
       Are you sure you want to delete this {commentOrThread.type}?
@@ -465,7 +465,7 @@ function CommentsPanelListComment({
   ) => void;
   rtf: Intl.RelativeTimeFormat;
   thread?: Thread;
-}): JSX.Element {
+}): React.ReactElement {
   const seconds = Math.round((comment.timeStamp - performance.now()) / 1000);
   const minutes = Math.round(seconds / 60);
   const [modal, showModal] = useModal();
@@ -530,7 +530,7 @@ function CommentsPanelList({
     isInlineComment: boolean,
     thread?: Thread,
   ) => void;
-}): JSX.Element {
+}): React.ReactElement {
   const [editor] = useLexicalComposerContext();
   const [counter, setCounter] = useState(0);
   const [modal, showModal] = useModal();
@@ -671,7 +671,7 @@ function CommentsPanel({
     isInlineComment: boolean,
     thread?: Thread,
   ) => void;
-}): JSX.Element {
+}): React.ReactElement {
   const listRef = useRef<HTMLUListElement>(null);
   const isEmpty = comments.length === 0;
 
@@ -704,7 +704,7 @@ export default function CommentPlugin({
   providerFactory,
 }: {
   providerFactory?: (id: string, yjsDocMap: Map<string, Doc>) => Provider;
-}): JSX.Element {
+}): React.ReactElement {
   const collabContext = useCollaborationContext();
   const [editor] = useLexicalComposerContext();
   const commentStore = useMemo(() => new CommentStore(editor), [editor]);
